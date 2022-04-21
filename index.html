@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bai tap them JS If Else</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- One page roll -->
+    <link
+      rel="stylesheet"
+      href="./purejs-onepage-scroll-master/onepage-scroll.css"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      .center {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+      }
+
+      .bai1 {
+        background: linear-gradient(-45deg, #c06c84, #6c5b7b, #355c7d);
+      }
+
+      .bai2 {
+        background: linear-gradient(-45deg, #7aa1d2, #dbd4b4, #cc95c0);
+      }
+
+      .bai3 {
+        background: linear-gradient(-45deg, #3b4371, #f3904f);
+      }
+
+      .bai4 {
+        background: linear-gradient(-45deg, #f29492, #114357);
+      }
+
+      .bai1,
+      .bai2,
+      .bai3,
+      .bai4 {
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+        height: 100vh;
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <section class="bai1">
+        <div class="container center">
+          <h3>Bài 1 - Tìm ngày tiếp theo / ngày trước đó</h3>
+          <h4>Nhập vào ngày tháng năm</h4>
+          <div class="input-number d-flex w-50 my-3 justify-content-center">
+            <div class="form-group mx-3">
+              <label for="bai1_ngay">Nhập ngày</label>
+              <input
+                type="text"
+                class="form-control text-center"
+                name=""
+                id="bai1_ngay"
+                aria-describedby="helpId"
+              />
+            </div>
+            <div class="form-group mx-3">
+              <label for="bai1_thang">Nhập tháng</label>
+              <input
+                type="text"
+                class="form-control text-center"
+                name=""
+                id="bai1_thang"
+                aria-describedby="helpId"
+              />
+            </div>
+            <div class="form-group mx-3">
+              <label for="bai1_nam">Nhập năm</label>
+              <input
+                type="text"
+                class="form-control text-center"
+                name=""
+                id="bai1_nam"
+                aria-describedby="helpId"
+              />
+            </div>
+          </div>
+          <div class="bai1_btn d-flex">
+            <button
+              type="button"
+              class="btn btn-primary mx-2"
+              onclick="timNgayKeTiep()"
+            >
+              Tính ngày tiếp theo
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary mx-2"
+              onclick="timNgayTruocDo()"
+            >
+              Tính ngày trước đó
+            </button>
+          </div>
+          <p id="bai1_ngay_tiep_theo" class="display-4"></p>
+          <p id="bai1_ngay_truoc_do" class="display-4"></p>
+        </div>
+      </section>
+
+      <section class="bai2">
+        <div class="container center">
+          <h3>Bài 2 - Tìm số ngày trong tháng</h3>
+          <h4>Nhập vào tháng năm</h4>
+          <div class="input-number d-flex w-50 my-3 justify-content-center">
+            <div class="form-group mx-3">
+              <label for="bai2_thang">Nhập tháng</label>
+              <input
+                type="text"
+                class="form-control text-center"
+                name=""
+                id="bai2_thang"
+                aria-describedby="helpId"
+              />
+            </div>
+            <div class="form-group mx-3">
+              <label for="bai2_nam">Nhập năm</label>
+              <input
+                type="text"
+                class="form-control text-center"
+                name=""
+                id="bai2_nam"
+                aria-describedby="helpId"
+              />
+            </div>
+          </div>
+          <div class="bai2_btn d-flex">
+            <button
+              type="button"
+              class="btn btn-primary mx-2"
+              onclick="timNgay()"
+            >
+              Tìm số ngày trong tháng
+            </button>
+          </div>
+          <p id="bai2_ket_qua" class="display-4 pt-5"></p>
+        </div>
+      </section>
+
+      <section class="bai3">
+        <div class="container center">
+          <h3>Bài 3 - In cách đọc số nguyên</h3>
+          <h4>Nhập vào số nguyên có ba chữ số</h4>
+          <div class="input-number d-flex w-50 my-3 justify-content-center">
+            <div class="form-group mx-3">
+              <label for="bai3_number">Nhập số</label>
+              <input
+                type="text"
+                class="form-control text-center"
+                name=""
+                id="bai3_number"
+                aria-describedby="helpId"
+              />
+            </div>
+          </div>
+          <div class="bai3_btn d-flex">
+            <button
+              type="button"
+              class="btn btn-primary mx-2"
+              onclick="inCachDoc()"
+            >
+              In cách đọc
+            </button>
+          </div>
+          <p id="bai3_ket_qua" class="display-4 pt-3"></p>
+        </div>
+      </section>
+
+      <section class="bai4">
+        <div class="container center">
+          <h3>Bài 4 - Tìm sinh viên xa trường nhất</h3>
+          <h4>Nhập tên và tọa độ của sinh viên</h4>
+          <div class="input_sinh_vien d-flex w-100 justify-content-around">
+            <div class="sinh_vien_A_input">
+              <p>
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#sinh_vien_A"
+                  aria-expanded="false"
+                  aria-controls="sinh_vien_A"
+                >
+                  Sinh Viên A
+                </button>
+              </p>
+              <div
+                class="input-number my-3 justify-content-center collapse text-dark"
+                id="sinh_vien_A"
+              >
+                <div class="card card-body">
+                  <div class="form-group mx-3">
+                    <label for="bai4_ten_SV_A">Nhập tên sinh viên A</label>
+                    <input
+                      type="text"
+                      class="form-control text-center"
+                      name=""
+                      id="bai4_ten_SV_A"
+                      aria-describedby="helpId"
+                    />
+                  </div>
+                  <div class="form-group mx-3">
+                    <label for="bai4_toa_do_X_SV_A"
+                      >Nhập tọa độ X của sinh viên A</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control text-center"
+                      name=""
+                      id="bai4_toa_do_X_SV_A"
+                      aria-describedby="helpId"
+                    />
+                  </div>
+                  <div class="form-group mx-3">
+                    <label for="bai4_toa_do_Y_SV_A"
+                      >Nhập tọa độ Y của sinh viên A</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control text-center"
+                      name=""
+                      id="bai4_toa_do_Y_SV_A"
+                      aria-describedby="helpId"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sinh_vien_B_input">
+              <p>
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#sinh_vien_B"
+                  aria-expanded="false"
+                  aria-controls="sinh_vien_B"
+                >
+                  Sinh Viên B
+                </button>
+              </p>
+              <div
+                class="input-number my-3 justify-content-center collapse text-dark"
+                id="sinh_vien_B"
+              >
+                <div class="card card-body">
+                  <div class="form-group mx-3">
+                    <label for="bai4_ten_SV_B">Nhập tên sinh viên B</label>
+                    <input
+                      type="text"
+                      class="form-control text-center"
+                      name=""
+                      id="bai4_ten_SV_B"
+                      aria-describedby="helpId"
+                    />
+                  </div>
+                  <div class="form-group mx-3">
+                    <label for="bai4_toa_do_X_SV_B"
+                      >Nhập tọa độ X của sinh viên B</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control text-center"
+                      name=""
+                      id="bai4_toa_do_X_SV_B"
+                      aria-describedby="helpId"
+                    />
+                  </div>
+                  <div class="form-group mx-3">
+                    <label for="bai4_toa_do_Y_SV_B"
+                      >Nhập tọa độ Y của sinh viên B</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control text-center"
+                      name=""
+                      id="bai4_toa_do_Y_SV_B"
+                      aria-describedby="helpId"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sinh_vien_C_input">
+              <p>
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#sinh_vien_C"
+                  aria-expanded="false"
+                  aria-controls="sinh_vien_C"
+                >
+                  Sinh Viên C
+                </button>
+              </p>
+              <div
+                class="input-number my-3 justify-content-center collapse text-dark"
+                id="sinh_vien_C"
+              >
+                <div class="card card-body">
+                  <div class="form-group mx-3">
+                    <label for="bai4_ten_SV_C">Nhập tên sinh viên C</label>
+                    <input
+                      type="text"
+                      class="form-control text-center"
+                      name=""
+                      id="bai4_ten_SV_C"
+                      aria-describedby="helpId"
+                    />
+                  </div>
+                  <div class="form-group mx-3">
+                    <label for="bai4_toa_do_X_SV_C"
+                      >Nhập tọa độ X của sinh viên C</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control text-center"
+                      name=""
+                      id="bai4_toa_do_X_SV_C"
+                      aria-describedby="helpId"
+                    />
+                  </div>
+                  <div class="form-group mx-3">
+                    <label for="bai4_toa_do_Y_SV_C"
+                      >Nhập tọa độ Y của sinh viên C</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control text-center"
+                      name=""
+                      id="bai4_toa_do_Y_SV_C"
+                      aria-describedby="helpId"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="input_truong d-flex flex-column align-items-center">
+            <h4>Nhập tên và tọa độ của trường</h4>
+
+            <div class="truong_input">
+              <p>
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#input_truong"
+                  aria-expanded="false"
+                  aria-controls="input_truong"
+                >
+                  Nhập tọa độ
+                </button>
+              </p>
+              <div
+                class="input-number my-3 justify-content-center collapse text-dark"
+                id="input_truong"
+              >
+                <div class="card card-body">
+                  <div class="form-group mx-3">
+                    <label for="bai4_toa_do_X_truong"
+                      >Nhập tọa độ X của trường</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control text-center"
+                      name=""
+                      id="bai4_toa_do_X_truong"
+                      aria-describedby="helpId"
+                    />
+                  </div>
+                  <div class="form-group mx-3">
+                    <label for="bai4_toa_do_Y_truong"
+                      >Nhập tọa độ Y của trường</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control text-center"
+                      name=""
+                      id="bai4_toa_do_Y_truong"
+                      aria-describedby="helpId"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bai4_btn d-flex">
+            <button
+              type="button"
+              class="btn btn-primary mx-2"
+              onclick="timKhoangCachLonNhat()"
+            >
+              Tìm Sinh Viên Nhà Xa Nhất
+            </button>
+          </div>
+          <p id="bai4_ket_qua" class="display-4 pt-3"></p>
+        </div>
+      </section>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- One page roll srcipt -->
+    <script src="./purejs-onepage-scroll-master/onepagescroll.js"></script>
+    <script>
+      onePageScroll(".main");
+    </script>
+
+    <!-- Optional JavaScript -->
+    <script src="./bai1.js"></script>
+    <script src="./bai2.js"></script>
+    <script src="./bai3.js"></script>
+    <script src="./bai4.js"></script>
+  </body>
+</html>
